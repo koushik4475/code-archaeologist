@@ -1,46 +1,175 @@
-# 🏛️ Code Archaeologist
+<div align="center">
 
-> AI-powered tool to understand **why code exists**, not just what it does.
+<!-- Animated Header -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=200&section=header&text=Code%20Archaeologist&fontSize=80&fontAlignY=35&animation=twinkling&fontColor=fff" />
 
-Ever inherited a mysterious codebase and wondered "WTF is this code doing here?" Code Archaeologist excavates your Git history and uses AI to tell you the story behind your code.
+<!-- Typing Animation -->
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&duration=3000&pause=1000&color=F75C7E&center=true&vCenter=true&width=600&lines=Excavate+Your+Code+History+%F0%9F%8F%9B%EF%B8%8F;Understand+WHY+Code+Exists;AI-Powered+Insights+%F0%9F%A4%96;Never+Wonder+WTF+Again!" alt="Typing SVG" /></a>
+
+<br/>
+
+<!-- Badges with Animation -->
+<p align="center">
+  <img src="https://img.shields.io/badge/version-1.0.0-blue?style=for-the-badge&logo=semver&logoColor=white" />
+  <img src="https://img.shields.io/badge/node-%3E%3D16.0.0-green?style=for-the-badge&logo=node.js&logoColor=white" />
+  <img src="https://img.shields.io/badge/AI-Claude-purple?style=for-the-badge&logo=anthropic&logoColor=white" />
+  <img src="https://img.shields.io/badge/license-MIT-orange?style=for-the-badge&logo=opensourceinitiative&logoColor=white" />
+</p>
+
+<!-- Social Proof -->
+<p align="center">
+  <img src="https://img.shields.io/github/stars/koushik4475/code-archaeologist?style=social" />
+  <img src="https://img.shields.io/github/forks/koushik4475/code-archaeologist?style=social" />
+  <img src="https://img.shields.io/github/watchers/koushik4475/code-archaeologist?style=social" />
+</p>
+
+<!-- Quick Links with Icons -->
+<p align="center">
+  <a href="#-features">Features</a> •
+  <a href="#-installation">Installation</a> •
+  <a href="#-usage">Usage</a> •
+  <a href="#-examples">Examples</a> •
+  <a href="#-contributing">Contributing</a>
+</p>
+
+<br/>
+
+<!-- Animated Divider -->
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+
+</div>
+
+<br/>
+
+## 🌟 What is Code Archaeologist?
+
+<table>
+<tr>
+<td width="50%">
+
+Ever inherited a mysterious codebase and thought:
+
+> **"WTF is this code doing here?"** 🤔
+
+Code Archaeologist is your AI-powered time machine that excavates Git history to tell you the **story behind your code**, not just what it does.
+
+</td>
+<td width="50%">
+
+```bash
+$ code-arch file legacy.js
+
+🤖 AI Analysis:
+This file was a rushed hotfix
+during the Safari 15 rollout.
+Originally temporary, it became
+permanent due to time constraints.
+
+⚠️  8 urgent commits detected!
+💡 Recommend: Refactor ASAP
+```
+
+</td>
+</tr>
+</table>
+
+<br/>
 
 ## ✨ Features
 
-- 🔍 **File Analysis** - Understand why files were created and how they evolved
-- ⚡ **Function Analysis** - Deep dive into specific functions with AI insights
-- 🪦 **Dead Code Detection** - Find files that haven't been touched in ages
-- 🏛️ **Repository Overview** - Get a bird's-eye view of your codebase health
-- 🤖 **AI-Powered Insights** - Claude analyzes commit patterns to explain intent
-- 📊 **Rich Statistics** - Track changes, contributors, and technical debt
+<div align="center">
+
+| 🔍 **File Analysis** | ⚡ **Function Deep Dive** | 🪦 **Dead Code Detection** |
+|:---:|:---:|:---:|
+| Understand file creation<br/>and evolution story | AI-powered insights on<br/>specific functions | Find forgotten code<br/>gathering dust |
+| **🏛️ Repository Overview** | **🤖 AI-Powered Insights** | **📊 Rich Statistics** |
+| Bird's-eye view of<br/>codebase health | Claude analyzes commit<br/>patterns & intent | Track changes, contributors,<br/>& technical debt |
+
+</div>
+
+<details>
+<summary><b>🎯 Click to see feature highlights!</b></summary>
+
+<br/>
+
+- ✅ **Smart Pattern Detection** - Identifies urgent fixes, TODOs, and code smells automatically
+- ✅ **Multi-Language Support** - Works with any Git-tracked files
+- ✅ **Actionable Recommendations** - Not just data, but what to *do* about it
+- ✅ **Beautiful CLI Output** - Color-coded, emoji-rich, terminal-friendly
+- ✅ **Fast & Lightweight** - Minimal dependencies, maximum speed
+- ✅ **Configurable** - Customize thresholds, exclusions, and AI behavior
+
+</details>
+
+<br/>
+
+<div align="center">
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+</div>
 
 ## 🚀 Installation
+
+<table>
+<tr>
+<td>
+
+### Global Installation (Recommended)
 
 ```bash
 npm install -g code-archaeologist
 ```
 
-Or run locally:
+</td>
+<td>
+
+### Local Development
 
 ```bash
-git clone https://github.com/yourusername/code-archaeologist.git
+git clone https://github.com/koushik4475/code-archaeologist.git
 cd code-archaeologist
 npm install
 npm link
 ```
 
+</td>
+</tr>
+</table>
+
+**Requirements:** Node.js ≥ 16.0.0, Git installed
+
+<br/>
+
 ## 📖 Usage
 
-### Analyze a File
+### 🎬 Quick Start Demo
 
 ```bash
+# Analyze a mysterious file
 code-arch file src/components/UserAuth.js
+
+# Deep dive into a function
+code-arch function src/utils/validator.js validateEmail
+
+# Find dead code
+code-arch dead-code src/ --recursive --threshold 365
+
+# Repository health check
+code-arch repo --since 2023-01-01
 ```
 
-**Output:**
-```
+<br/>
+
+<details open>
+<summary><h3>🔍 File Analysis - Example Output</h3></summary>
+
+```bash
+$ code-arch file src/components/UserAuth.js
+
 🔍 Excavating src/components/UserAuth.js...
 
-📄 File Analysis: src/components/UserAuth.js
+┌─────────────────────────────────────────────────────────────┐
+│  📄 File Analysis: src/components/UserAuth.js               │
+└─────────────────────────────────────────────────────────────┘
 
 📊 Metadata
   Created: 2022-03-15 by Alice Chen
@@ -55,11 +184,14 @@ code-arch file src/components/UserAuth.js
   Change Velocity: high (3.2 commits/month)
 
 🤖 AI Analysis
-  This file was created as a rushed hotfix for a critical authentication
-  bug discovered during the Safari 15 rollout. Initially intended as a
-  temporary workaround, it became permanent due to time constraints.
-  The high number of bug fixes (8 urgent commits) suggests unclear
-  requirements around OAuth token handling.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+This file was created as a rushed hotfix for a critical 
+authentication bug discovered during the Safari 15 rollout. 
+Initially intended as a temporary workaround, it became 
+permanent due to time constraints. The high number of bug 
+fixes (8 urgent commits) suggests unclear requirements 
+around OAuth token handling.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ⚠️  Code Smells Detected
   🔴 panic_driven: Found 8 urgent/hotfix commits
@@ -67,18 +199,18 @@ code-arch file src/components/UserAuth.js
      • 2023-09-14 (7bd4e8a): HOTFIX: OAuth token expiry bug
 
 💡 Recommendations
-  🔴 high_churn: High change frequency detected - may indicate instability
-  🔴 technical_debt: Technical debt detected - review and refactor recommended
+  🔴 high_churn: High change frequency - indicates instability
+  🔴 technical_debt: Review and refactor recommended
 ```
 
-### Analyze a Specific Function
+</details>
+
+<details>
+<summary><h3>⚡ Function Analysis - Example Output</h3></summary>
 
 ```bash
-code-arch function src/utils/validator.js validateEmail
-```
+$ code-arch function src/utils/validator.js validateEmail
 
-**Output:**
-```
 ⚡ Function Analysis: validateEmail
 
 📍 Location
@@ -92,201 +224,329 @@ code-arch function src/utils/validator.js validateEmail
   Last Modified: 2024-01-15
 
 🤖 AI Analysis
-  Originally a simple regex check, this function evolved into a complex
-  validator after multiple edge cases were discovered (international
-  domains, plus addressing). The 12 commits suggest requirements weren't
-  clear initially. Recent changes indicate ongoing issues with email
-  validation standards.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Originally a simple regex check, this function evolved into 
+a complex validator after multiple edge cases were discovered 
+(international domains, plus addressing). The 12 commits 
+suggest requirements weren't clear initially.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 💡 Recommendations
-  🟡 stability: 12 commits found - function may have unclear requirements
-  🔴 quality: 4 urgent fixes detected - thorough testing recommended
+  🟡 stability: 12 commits - unclear requirements
+  🔴 quality: 4 urgent fixes - needs testing
 ```
 
-### Detect Dead Code
+</details>
+
+<details>
+<summary><h3>🪦 Dead Code Detection - Example Output</h3></summary>
 
 ```bash
-code-arch dead-code src/ --recursive --threshold 365
-```
+$ code-arch dead-code src/ --recursive --threshold 365
 
-**Output:**
-```
-🪦 Scanning for dead code...
+🪦 Scanning for dead code in src/...
 
-🪦 Dead Code Scan: src/
+┌─────────────────────────────────────────────────────────────┐
+│  💀 Dead Code Scan Results                                  │
+└─────────────────────────────────────────────────────────────┘
 
 📊 Summary
   Total Files Scanned: 87
-  Dead Code Files: 12
+  Dead Code Files: 12 (13.8%)
   Suspicious Files: 8
   Active Files: 67
 
-💡 Insights
-  • Found 12 files (13.8%) untouched for 365+ days
-  • Oldest untouched file: src/legacy/parser.js (987 days)
-  • Most dead code in .js files (9 files)
+🔴 Top 10 Dead Files
+┌───────────────────────────────┬────────────┬──────────┬──────────────┐
+│ File                          │ Last Mod   │ Days Ago │ Author       │
+├───────────────────────────────┼────────────┼──────────┼──────────────┤
+│ src/legacy/parser.js          │ 2021-04-12 │ 987      │ Bob Williams │
+│ src/utils/deprecated.js       │ 2021-08-20 │ 857      │ Alice Chen   │
+│ src/old/formatter.js          │ 2022-01-05 │ 723      │ Carol Davis  │
+└───────────────────────────────┴────────────┴──────────┴──────────────┘
 
-🔴 Dead Code Files (Top 10)
-┌─────────────────────────────────────┬────────────┬──────────┬──────────────┐
-│ File                                │ Last Mod   │ Days Ago │ Author       │
-├─────────────────────────────────────┼────────────┼──────────┼──────────────┤
-│ src/legacy/parser.js                │ 2021-04-12 │ 987      │ Bob Williams │
-│ src/utils/deprecated.js             │ 2021-08-20 │ 857      │ Alice Chen   │
-│ src/old/formatter.js                │ 2022-01-05 │ 723      │ Carol Davis  │
-└─────────────────────────────────────┴────────────┴──────────┴──────────────┘
+💡 Potential Savings: ~1,247 lines of code
 ```
 
-### Repository Overview
+</details>
 
-```bash
-code-arch repo --since 2023-01-01 --top 10
-```
+<br/>
 
-**Output:**
-```
-🏛️  Excavating repository history...
-
-🏛️  Repository Analysis
-
-📊 Summary
-  Total Commits: 1,247
-  Unique Contributors: 15
-  Date Range: 2023-01-01 to 2024-01-31
-
-🏥 Health Metrics
-  Overall Health: fair (65/100)
-  Bug Fix Ratio: 23.4%
-  Change Concentration: 42.1%
-  Activity Trend: stable
-
-💡 Insights
-  🟡 High bug fix ratio (23.4%) - quality issues detected
-  🟡 42.1% of changes in top 10 files - potential hotspots
-
-🔥 Hotspot Files (Most Changed)
-┌────────────────────────────────────────┬─────────┐
-│ File                                   │ Commits │
-├────────────────────────────────────────┼─────────┤
-│ src/api/auth.js                        │ 89      │
-│ src/components/Dashboard.jsx           │ 67      │
-│ src/utils/validation.js                │ 54      │
-└────────────────────────────────────────┴─────────┘
-
-👥 Top Contributors
-  Alice Chen               ████████████████████████ 234
-  Bob Williams             ███████████████ 156
-  Carol Davis              ████████ 87
-```
+<div align="center">
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+</div>
 
 ## 🎯 Use Cases
 
-### 1. **Onboarding New Team Members**
-"Why does this weird authentication flow exist?"
-```bash
-code-arch file src/auth/oauth-handler.js
+<div align="center">
+
+```mermaid
+graph LR
+    A[🆕 New Team Member] --> B{Code Confusion}
+    B --> C[code-arch file]
+    C --> D[✨ Understand Intent]
+    
+    E[🔧 Refactoring] --> F{Safe to Delete?}
+    F --> G[code-arch function]
+    G --> H[✅ Confident Decision]
+    
+    I[🏢 Tech Debt Review] --> J{How Much Debt?}
+    J --> K[code-arch dead-code]
+    K --> L[📊 Clear Metrics]
 ```
 
-### 2. **Refactoring Planning**
-"Is this function safe to delete?"
-```bash
-code-arch function src/utils/legacy.js processData
-```
+</div>
 
-### 3. **Technical Debt Assessment**
-"How much dead code do we have?"
-```bash
-code-arch dead-code src/ --recursive
-```
+<table>
+<tr>
+<td width="50%">
 
-### 4. **Code Review Context**
-"What's the history of this hotspot file?"
-```bash
-code-arch file src/api/payment.js --depth 50
-```
+### 👨‍💻 Developer Scenarios
 
-### 5. **Sprint Retrospectives**
-"Where are we spending most of our time?"
-```bash
-code-arch repo --since 2024-01-01
-```
+1. **Onboarding** - "Why does this exist?"
+   ```bash
+   code-arch file src/auth/oauth.js
+   ```
+
+2. **Refactoring** - "Is this safe to delete?"
+   ```bash
+   code-arch function src/legacy.js oldAPI
+   ```
+
+3. **Code Review** - "What's the context?"
+   ```bash
+   code-arch file src/payment.js --depth 50
+   ```
+
+</td>
+<td width="50%">
+
+### 🏢 Team Scenarios
+
+1. **Tech Debt Assessment**
+   ```bash
+   code-arch dead-code src/ --recursive
+   ```
+
+2. **Sprint Retrospectives**
+   ```bash
+   code-arch repo --since 2024-01-01
+   ```
+
+3. **Quality Metrics**
+   ```bash
+   code-arch repo --top 10
+   ```
+
+</td>
+</tr>
+</table>
+
+<br/>
 
 ## 🏗️ How It Works
 
-1. **Git History Mining**: Analyzes commits, diffs, and blame data
-2. **Pattern Detection**: Identifies urgent fixes, TODOs, and code smells
-3. **AI Analysis**: Uses Claude to understand *intent* from commit messages
-4. **Actionable Insights**: Generates recommendations based on patterns
+<div align="center">
 
-## 🎨 Features in Detail
+```mermaid
+graph TD
+    A[📂 Your Codebase] --> B[🔍 Git History Mining]
+    B --> C[📊 Pattern Detection]
+    C --> D[🤖 AI Analysis]
+    D --> E[💡 Actionable Insights]
+    
+    B --> F[Commits & Diffs]
+    B --> G[Git Blame Data]
+    
+    C --> H[Urgent Fixes]
+    C --> I[Code Smells]
+    C --> J[TODOs]
+    
+    D --> K[Claude AI]
+    K --> L[Intent Understanding]
+    
+    E --> M[📈 Recommendations]
+```
 
-### File Analysis
-- Creation date and original author
-- Commit history with change statistics
-- AI-powered purpose analysis
-- Related files frequently changed together
-- Code smell detection (panic commits, TODOs)
+</div>
 
-### Function Analysis
-- Line-level git blame
-- Cyclomatic complexity estimation
-- Contributor count and stability metrics
-- Historical commit context
-- Refactoring recommendations
+<br/>
 
-### Dead Code Detection
-- Configurable inactivity threshold
-- Recursive directory scanning
-- Language-agnostic (works with any git-tracked files)
-- Sorted by age for easy prioritization
+**The Magic Behind the Scenes:**
 
-### Repository Overview
-- Commit activity timeline
-- Top contributors and hotspot files
-- Health score calculation
-- Bug fix ratio analysis
-- Change concentration metrics
+1. 🔎 **Git Mining** - Extracts commits, diffs, and blame data
+2. 🧩 **Pattern Recognition** - Identifies urgent fixes, TODOs, smells
+3. 🧠 **AI Understanding** - Claude analyzes *why*, not just *what*
+4. 💎 **Insight Generation** - Actionable recommendations
+
+<br/>
+
+<div align="center">
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+</div>
 
 ## ⚙️ Configuration
 
-Create a `.code-arch.json` in your project root:
+Create `.code-arch.json` in your project root:
 
 ```json
 {
   "excludePaths": [
     "node_modules",
     "dist",
-    "build"
+    "build",
+    ".git"
   ],
   "defaultDepth": 20,
   "deadCodeThreshold": 365,
-  "aiProvider": "anthropic"
+  "aiProvider": "anthropic",
+  "complexityThreshold": 10,
+  "hotspotMinCommits": 15
 }
 ```
 
+<details>
+<summary><b>📋 Configuration Options</b></summary>
+
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `excludePaths` | Array | `[]` | Directories to ignore |
+| `defaultDepth` | Number | `20` | Default commit history depth |
+| `deadCodeThreshold` | Number | `365` | Days before code is "dead" |
+| `aiProvider` | String | `anthropic` | AI service provider |
+| `complexityThreshold` | Number | `10` | Max acceptable complexity |
+| `hotspotMinCommits` | Number | `15` | Min commits for hotspot |
+
+</details>
+
+<br/>
+
 ## 🤝 Contributing
 
-We welcome contributions! Here's how:
+<div align="center">
 
-1. Fork the repo
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Commit your changes: `git commit -m 'Add amazing feature'`
-4. Push to branch: `git push origin feature/amazing-feature`
-5. Open a Pull Request
+We ❤️ contributions! Here's how you can help make Code Archaeologist even better:
 
-## 📜 License
+</div>
 
-MIT License - see [LICENSE](LICENSE) file for details
+```bash
+# 1. Fork the repo
+# 2. Create your feature branch
+git checkout -b feature/amazing-feature
+
+# 3. Commit your changes
+git commit -m '✨ Add amazing feature'
+
+# 4. Push to the branch
+git push origin feature/amazing-feature
+
+# 5. Open a Pull Request
+```
+
+<div align="center">
+
+[![Contributors](https://contrib.rocks/image?repo=koushik4475/code-archaeologist)](https://github.com/koushik4475/code-archaeologist/graphs/contributors)
+
+</div>
+
+<br/>
+
+## 📊 Project Stats
+
+<div align="center">
+
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=koushik4475&repo=code-archaeologist&show_icons=true&theme=radical)
+
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=koushik4475&layout=compact&theme=radical)
+
+</div>
+
+<br/>
+
+<div align="center">
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+</div>
 
 ## 🙏 Acknowledgments
 
-- Built with [simple-git](https://github.com/steveukx/git-js)
-- AI powered by [Anthropic Claude](https://www.anthropic.com)
-- Inspired by the pain of maintaining legacy codebases 😅
+<table>
+<tr>
+<td align="center" width="33%">
+<img src="https://skillicons.dev/icons?i=git" width="40"/><br/>
+<b>simple-git</b><br/>
+<sub>Git operations</sub>
+</td>
+<td align="center" width="33%">
+<img src="https://www.anthropic.com/images/icons/apple-touch-icon.png" width="40"/><br/>
+<b>Anthropic Claude</b><br/>
+<sub>AI-powered insights</sub>
+</td>
+<td align="center" width="33%">
+<img src="https://skillicons.dev/icons?i=nodejs" width="40"/><br/>
+<b>Node.js</b><br/>
+<sub>Runtime environment</sub>
+</td>
+</tr>
+</table>
 
-## 🐛 Issues & Feature Requests
+<div align="center">
 
-Found a bug? Have an idea? [Open an issue](https://github.com/yourusername/code-archaeologist/issues)
+**Special thanks to all developers who've inherited legacy code and survived! 💪**
+
+</div>
+
+<br/>
+
+## 📜 License
+
+<div align="center">
+
+MIT License © 2024 [Koushik](https://github.com/koushik4475)
+
+See [LICENSE](LICENSE) file for details
+
+</div>
+
+<br/>
+
+## 🐛 Issues & Support
+
+<div align="center">
+
+Found a bug? Have an idea? We'd love to hear from you!
+
+[![Report Bug](https://img.shields.io/badge/🐛-Report%20Bug-red?style=for-the-badge)](https://github.com/koushik4475/code-archaeologist/issues)
+[![Request Feature](https://img.shields.io/badge/💡-Request%20Feature-blue?style=for-the-badge)](https://github.com/koushik4475/code-archaeologist/issues)
+[![Ask Question](https://img.shields.io/badge/❓-Ask%20Question-green?style=for-the-badge)](https://github.com/koushik4475/code-archaeologist/discussions)
+
+</div>
+
+<br/>
+
+## 🌟 Show Your Support
+
+<div align="center">
+
+If Code Archaeologist helped you understand your codebase better, give it a ⭐!
+
+It really helps the project grow! 🚀
+
+<a href="https://github.com/koushik4475/code-archaeologist/stargazers">
+  <img src="https://img.shields.io/github/stars/koushik4475/code-archaeologist?style=social" alt="Star on GitHub">
+</a>
+
+</div>
+
+<br/>
 
 ---
 
-**Made with ❤️ by developers who've inherited too much legacy code**
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer" />
+
+**Made with ❤️ and ☕ by developers who've seen too much legacy code**
+
+<sub>Now go excavate some mysteries! 🏛️✨</sub>
+
+</div>
