@@ -1,0 +1,35 @@
+{
+  "name": "code-archaeologist",
+  "version": "1.0.0",
+  "description": "AI-powered tool to understand why code exists, not just what it does",
+  "main": "src/index.js",
+  "type": "module",
+  "bin": {
+    "code-arch": "./src/cli.js"
+  },
+  "scripts": {
+    "start": "node src/cli.js",
+    "test": "node --test tests/*.test.js",
+    "dev": "node --watch src/cli.js"
+  },
+  "keywords": [
+    "git",
+    "code-analysis",
+    "archaeology",
+    "legacy-code",
+    "ai",
+    "llm"
+  ],
+  "author": "Code Archaeologist Team",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^11.1.0",
+    "ora": "^8.0.1",
+    "simple-git": "^3.22.0",
+    "table": "^6.8.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
