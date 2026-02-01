@@ -17,8 +17,7 @@ export class GitAnalyzer {
     try {
       const log = await this.git.log({
         file: filepath,
-        maxCount: depth,
-        '--': filepath
+        maxCount: depth
       });
 
       const history = [];
@@ -63,8 +62,7 @@ export class GitAnalyzer {
     try {
       const log = await this.git.log({
         file: filepath,
-        '--diff-filter': 'A',
-        '--': filepath
+        '--diff-filter': 'A'
       });
 
       if (log.all.length === 0) {
@@ -91,8 +89,7 @@ export class GitAnalyzer {
     try {
       const log = await this.git.log({
         file: filepath,
-        maxCount: 1,
-        '--': filepath
+        maxCount: 1
       });
 
       if (log.all.length === 0) {
