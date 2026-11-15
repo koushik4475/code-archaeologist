@@ -1,3 +1,8 @@
+# Code Archaeologist | AI-Assisted Codebase Analysis and Repository Exploration CLI
+
+Code Archaeologist is a developer command-line tool for understanding unfamiliar codebases. It helps inspect files and functions, trace code behavior, identify potentially unused code, and review repository structure with AI-assisted analysis. It is designed for developers onboarding to legacy projects, performing code reviews, or investigating inherited software; validate automated findings before changing production code.
+
+
 <div align="center">
 
 <!-- Animated Header -->
@@ -144,10 +149,7 @@ npm link
 ### 🎬 Quick Start Demo
 
 ```bash
-# Code Archaeologist | AI-Assisted Codebase Analysis and Repository Exploration CLI
-
-Code Archaeologist is a developer command-line tool for understanding unfamiliar codebases. It helps inspect files and functions, trace code behavior, identify potentially unused code, and review repository structure with AI-assisted analysis. It is designed for developers onboarding to legacy projects, performing code reviews, or investigating inherited software; validate automated findings before changing production code.
-
+# Analyze a mysterious file
 code-arch file src/components/UserAuth.js
 
 # Deep dive into a function
