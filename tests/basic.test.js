@@ -89,7 +89,7 @@ test('dead-code age categorization uses threshold boundaries', () => {
 import { findFunction } from '../src/analyzers/functionAnalyzer.js';
 
 test('findFunction treats regex metacharacters in names literally', () => {
-  const content = 'function foo.bar() {\\n  return 1;\\n}\\nfunction fooXbar() {\\n  return 2;\\n}';
+  const content = 'function foo.bar() {\n  return 1;\n}\nfunction fooXbar() {\n  return 2;\n}';
   const found = findFunction(content, 'foo.bar');
   assert.ok(found);
   assert.equal(found.startLine, 1);
