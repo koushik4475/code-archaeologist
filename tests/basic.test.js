@@ -76,3 +76,11 @@ test('AIAnalyzer - detectCodeSmells finds panic commits', async () => {
 });
 
 console.log('\n✅ All tests passed!\n');
+
+import { categorizeFile } from '../src/analyzers/deadCodeDetector.js';
+
+test('dead-code age categorization uses threshold boundaries', () => {
+  assert.strictEqual(categorizeFile(366, 365), 'dead');
+  assert.strictEqual(categorizeFile(256, 365), 'suspicious');
+  assert.strictEqual(categorizeFile(255, 365), 'active');
+});

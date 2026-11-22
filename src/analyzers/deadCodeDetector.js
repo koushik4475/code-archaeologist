@@ -1,9 +1,12 @@
 import { GitAnalyzer } from '../git/gitAnalyzer.js';
-import { readdirSync, statSync } from 'fs';
+import { readdirSync, lstatSync } from 'fs';
 import { join, extname } from 'path';
 
 export async function detectDeadCode(directory, options = {}) {
   const { recursive = false, thresholdDays = 365 } = options;
+  if (!Number.isFinite(thresholdDays) || thresholdDays <= 0) {
+    throw new RangeError('thresholdDays must be a positive finite number');
+  }
   const git = new GitAnalyzer(directory);
 
   const files = await scanDirectory(directory, recursive);
@@ -74,7 +77,9 @@ async function scanDirectory(directory, recursive) {
         }
 
         const fullPath = join(dir, entry);
-        const stat = statSync(fullPath);
+        const stat = lstatSync(fullPath);
+        // Ignore symbolic links to avoid traversing outside the target directory or cycles.
+        if (stat.isSymbolicLink()) continue;
 
         if (stat.isDirectory()) {
           scan(fullPath, depth + 1);
@@ -94,7 +99,7 @@ async function scanDirectory(directory, recursive) {
   return files;
 }
 
-function categorizeFile(daysAgo, threshold) {
+export function categorizeFile(daysAgo, threshold) {
   if (daysAgo > threshold) {
     return 'dead';
   } else if (daysAgo > threshold * 0.7) {
