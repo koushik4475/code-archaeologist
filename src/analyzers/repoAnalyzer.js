@@ -76,11 +76,14 @@ export async function analyzeRepo(options = {}) {
     .map(([month, commits]) => ({ month, commits }));
 
   // Calculate repository health metrics
+  const totalFileChanges = Array.from(commitsByFile.values())
+    .reduce((total, count) => total + count, 0);
   const healthMetrics = calculateRepoHealth(
     log.all,
     urgentCommits,
     topFiles,
-    timeline
+    timeline,
+    totalFileChanges
   );
 
   return {
@@ -102,7 +105,13 @@ export async function analyzeRepo(options = {}) {
   };
 }
 
-function calculateRepoHealth(commits, urgentCommits, topFiles, timeline) {
+export function calculateRepoHealth(
+  commits,
+  urgentCommits,
+  topFiles,
+  timeline,
+  totalFileChanges = 0
+) {
   const metrics = {
     bugFixRatio: 0,
     changeConcentration: 0,
@@ -115,11 +124,11 @@ function calculateRepoHealth(commits, urgentCommits, topFiles, timeline) {
     ? ((urgentCommits.length / commits.length) * 100).toFixed(1)
     : 0;
 
-  // Change concentration (how much work is in top 10 files)
-  const totalFileCommits = topFiles.reduce((sum, f) => sum + f.commits, 0);
-  const allCommitsCount = commits.length;
-  metrics.changeConcentration = allCommitsCount > 0
-    ? ((totalFileCommits / allCommitsCount) * 100).toFixed(1)
+  // Measure the top files' share of file-change events. A single commit can
+  // touch many files, so dividing by the number of commits can exceed 100%.
+  const topFileChanges = topFiles.reduce((sum, file) => sum + file.commits, 0);
+  metrics.changeConcentration = totalFileChanges > 0
+    ? ((topFileChanges / totalFileChanges) * 100).toFixed(1)
     : 0;
 
   // Activity trend (comparing recent vs older commits)
