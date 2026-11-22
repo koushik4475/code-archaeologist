@@ -77,7 +77,9 @@ async function scanDirectory(directory, recursive) {
         }
 
         const fullPath = join(dir, entry);
-        const stat = lstatSync(fullPath);\n        // Ignore symbolic links to avoid traversing outside the target directory or cycles.\n        if (stat.isSymbolicLink()) continue;
+        const stat = lstatSync(fullPath);
+        // Ignore symbolic links to avoid traversing outside the target directory or cycles.
+        if (stat.isSymbolicLink()) continue;
 
         if (stat.isDirectory()) {
           scan(fullPath, depth + 1);
