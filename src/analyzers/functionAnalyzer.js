@@ -58,7 +58,7 @@ export async function analyzeFunction(filepath, functionName, options = {}) {
   };
 }
 
-function findFunction(content, functionName, lineRange) {
+export function findFunction(content, functionName, lineRange) {
   const lines = content.split('\n');
   
   // If line range provided, use it
@@ -71,15 +71,19 @@ function findFunction(content, functionName, lineRange) {
     };
   }
 
+  // Escape user-supplied names before interpolating them into regular expressions.
+  // Function names containing '.', '[', '$', etc. must be matched literally.
+  const escapedName = [...functionName].map(char => '.*+?^${}()|[]\\'.includes(char) ? `\\${char}` : char).join('');
+
   // Try to find function by name
   // Supports: function name(), const name = () =>, name: function()
   const patterns = [
-    new RegExp(`function\\s+${functionName}\\s*\\(`),
-    new RegExp(`const\\s+${functionName}\\s*=`),
-    new RegExp(`${functionName}\\s*:\\s*function`),
-    new RegExp(`${functionName}\\s*\\([^)]*\\)\\s*{`), // Arrow functions
-    new RegExp(`def\\s+${functionName}\\s*\\(`), // Python
-    new RegExp(`public.*\\s+${functionName}\\s*\\(`), // Java/C#
+    new RegExp(`function\\s+${escapedName}\\s*\\(`),
+    new RegExp(`const\\s+${escapedName}\\s*=`),
+    new RegExp(`${escapedName}\\s*:\\s*function`),
+    new RegExp(`${escapedName}\\s*\\([^)]*\\)\\s*{`), // Arrow functions
+    new RegExp(`def\\s+${escapedName}\\s*\\(`), // Python
+    new RegExp(`public.*\\s+${escapedName}\\s*\\(`), // Java/C#
   ];
 
   for (let i = 0; i < lines.length; i++) {
