@@ -72,7 +72,19 @@ export function findFunction(content, functionName, lineRange) {
   }
 
   // Escape user-supplied names before interpolating them into regular expressions.
-  // Function names containing '.', '[', '
+  // Function names containing '.', '[', '$', etc. must be matched literally.
+  const escapedName = functionName.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\$&');
+
+  // Try to find function by name
+  // Supports: function name(), const name = () =>, name: function()
+  const patterns = [
+    new RegExp(`function\\s+${escapedName}\\s*\\(`),
+    new RegExp(`const\\s+${escapedName}\\s*=`),
+    new RegExp(`${escapedName}\\s*:\\s*function`),
+    new RegExp(`${escapedName}\\s*\\([^)]*\\)\\s*{`), // Arrow functions
+    new RegExp(`def\\s+${escapedName}\\s*\\(`), // Python
+    new RegExp(`public.*\\s+${escapedName}\\s*\\(`), // Java/C#
+  ];
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
