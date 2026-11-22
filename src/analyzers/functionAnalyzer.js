@@ -73,7 +73,7 @@ export function findFunction(content, functionName, lineRange) {
 
   // Escape user-supplied names before interpolating them into regular expressions.
   // Function names containing '.', '[', '$', etc. must be matched literally.
-  const escapedName = functionName.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\$&');
+  const escapedName = [...functionName].map(char => '.*+?^${}()|[]\\'.includes(char) ? `\\${char}` : char).join('');
 
   // Try to find function by name
   // Supports: function name(), const name = () =>, name: function()
